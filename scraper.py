@@ -21,27 +21,36 @@ def start(lane, tier, region):
         )
     )
 
+    link = "https://lolalytics.com/lol/tierlist/{}{}{}".format(
+        lane[0], tier[0], region[0]
+    )
+
     print("Inicializando Edge")
 
     # Abrindo Edge com opções
     driver = Edge(options=chrome_options)
-
-    link = "https://lolalytics.com/lol/tierlist/{}{}{}".format(
-        lane[0], tier[0], region[0]
-    )
 
     # Abrindo site
     driver.get(link)
 
     # Verificando se o site carregou
     assert "LoL Tier List" in driver.title
-    WebDriverWait(driver, 10).until(
-        expected_conditions.presence_of_element_located(
-            (By.CSS_SELECTOR, ".TierList_list__2tHpq")
+    try:
+        WebDriverWait(driver, 10).until(
+            expected_conditions.presence_of_element_located(
+                (By.CSS_SELECTOR, ".Elo_elo__1FJZ4")
+            )
         )
-    )
+    except:
+        print(
+            "\nTier list vazia ou não encontrada, por favor acesse '{}' para verificar se a tier list está vazia no site.".format(
+                link
+            )
+        )
 
-    print("Site '{}' carregado".format(link))
+        quit()
+
+    print("Site '{}' carregado\n".format(link))
 
     # Pegando versão do patch
     patch = (
