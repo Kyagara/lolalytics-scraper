@@ -1,6 +1,6 @@
 # LoLalytics-scraper
 
-Um scraper feito em python que gera arquivos de excel baseados na tier list do site [LoLalytics](https://lolalytics.com/).
+Um scraper feito em python que gera arquivos de excel baseados nas tier lists do site [LoLalytics](https://lolalytics.com/).
 
 Começando por um único script com uma url fixa que gerava um único arquivo `.csv`, resolvi ampliar um pouco o projeto para aceitar filtros escolhidos pelo usuário e criar um arquivo excel.
 
@@ -16,7 +16,9 @@ Começando por um único script com uma url fixa que gerava um único arquivo `.
 
 Para utilizar esse projeto é necessário utilizar o [Microsoft Edge Driver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/), baixe a versão estável e coloque o executável em algum lugar do seu `Path`.
 
-Após baixar o projeto, abra um terminal no diretório do projeto e use `pip install -r requirements.txt`
+Após baixar o projeto, abra um terminal no diretório do projeto e use `pip install -r requirements.txt`.
+
+Ao terminar a instalação dos pacotes, basta usar `python ./main.py` no terminal.
 
 ## Colaboradores
 
