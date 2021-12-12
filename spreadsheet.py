@@ -20,7 +20,7 @@ def start(champions, patch, lane, tier, region):
     # Criando um worksheet no documento
     worksheet = workbook.add_worksheet("Patch {}".format(patch))
 
-    # Format para usar em colunas que tinham virgulas
+    # Format para usar nas colunas de Games e Games Worldwide para adicionar uma virgula
     num_format = workbook.add_format({"num_format": "#,###"})
 
     # Colunas para a tabela do arquivo Excel

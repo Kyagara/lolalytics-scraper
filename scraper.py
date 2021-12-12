@@ -10,6 +10,7 @@ def start(lane, tier, region):
     chrome_options = EdgeOptions()
     chrome_options.use_chromium = True
     chrome_options.headless = True
+    chrome_options.add_argument("--lang=en-US")
     chrome_options.add_argument("--log-level=3")
 
     print(
@@ -103,7 +104,7 @@ def start(lane, tier, region):
         if len(text) == 0:
             continue
 
-        # Retirando newlines e virgulas da string
+        # Retirando newlines e virgulas
         string = text.replace("\n", " ").replace(",", "")
 
         champion = string.split(" ")

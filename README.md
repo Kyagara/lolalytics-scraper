@@ -14,6 +14,8 @@ Começando por um único script com uma url fixa que gerava um único arquivo `.
 
 ## Instalação
 
+Baixe a versão de [python](https://www.python.org/downloads/) mais recente.
+
 Para utilizar esse projeto é necessário utilizar o [Microsoft Edge Driver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/), baixe a versão estável e coloque o executável em algum lugar do seu `Path`.
 
 Após baixar o projeto, abra um terminal no diretório do projeto e use `pip install -r requirements.txt`.
