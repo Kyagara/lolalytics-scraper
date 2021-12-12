@@ -7,6 +7,8 @@ from helpers import regions, tiers, lanes
 
 print(" - LoLalytics-scraper - \nVocê pode sair do programa digitando 'q'\n")
 
+# Pedindo informações para o usuário, elas serão utilizados pelo scraper
+
 print("Escolha uma região:")
 helpers.printChoices(regions)
 regionInput = helpers.getUserInput(0, 12)
@@ -25,6 +27,8 @@ laneInput = helpers.getUserInput(0, 6)
 lane = helpers.getLane(lanes[(laneInput)])
 print("Você escolheu a lane: {}\n".format(lane[1]))
 
+# Começando o processo de pegar a tier list do site
 result = scraper.start(lane, tier, region)
 
+# Começando o processo de salvar a tier list para um arquivo excel
 spreadsheet.start(result[0], result[1], lane[1], tier[1], region[1])

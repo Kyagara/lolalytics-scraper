@@ -103,7 +103,8 @@ def start(lane, tier, region):
         if len(text) == 0:
             continue
 
-        string = text.replace("\n", " ")
+        # Retirando newlines e virgulas da string
+        string = text.replace("\n", " ").replace(",", "")
 
         champion = string.split(" ")
 
@@ -120,6 +121,7 @@ def start(lane, tier, region):
             if champion[-1] not in ranks:
                 champion.append(champion[-1])
 
+        # Adicionando tier ao champion e adicionando ele a lista de champions
         champion.insert(-1, tiers[index])
         index += 1
         champions.append(champion)
