@@ -73,4 +73,4 @@ def start(champions, patch, lane, tier, region):
 
     workbook.close()
 
-    print("Arquivo salvo em './{}'".format(path))
+    print("Arquivo salvo em './{}'\n".format(path))

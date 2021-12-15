@@ -5,10 +5,12 @@ import helpers
 from helpers import regions, tiers, lanes
 
 
-print(" - LoLalytics-scraper - \nVocê pode sair do programa digitando 'q'\n")
+print(" - LoLalytics-scraper - \n")
 
 # Pedindo informações para o usuário, elas serão utilizados pelo scraper
 def main():
+    print("Você pode sair do programa digitando 'q' como resposta\n")
+
     print("Escolha uma região:")
     helpers.printChoices(regions)
     regionInput = helpers.getUserInput(0, 12)
@@ -33,10 +35,10 @@ def main():
     # Começando o processo de salvar a tier list para um arquivo excel
     spreadsheet.start(result[0], result[1], lane[1], tier[1], region[1])
 
-    answer = input("Você quer rodar o script novamente (S/N):")
+    answer = input("Você quer rodar o script novamente (S/N): ")
 
     # Verifica se a resposta está dentro do set de respostas possiveis
-    if answer.lower in {"s", "sim", "yes", "y"}:
+    if answer.lower() in {"s", "sim", "yes", "y"}:
         main()
 
 

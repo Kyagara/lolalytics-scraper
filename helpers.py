@@ -80,7 +80,7 @@ def getUserInput(minValue, maxValue):
 
 
 def validateAnswer(value, minValue, maxValue):
-    if value == "q":
+    if value.lower() == "q":
         quit()
 
     if not value.isdigit():
