@@ -1,8 +1,11 @@
+import sys
 from selenium.webdriver.common.by import By
 from msedge.selenium_tools import EdgeOptions
 from msedge.selenium_tools import Edge
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 
 def start(lane, tier, region):
@@ -27,8 +30,11 @@ def start(lane, tier, region):
 
     print("Inicializando Edge")
 
+    # Obtendo path do edge
+    bin = EdgeChromiumDriverManager().install()
+
     # Abrindo Edge com opções
-    driver = Edge(options=chrome_options)
+    driver = Edge(executable_path=bin, options=chrome_options)
 
     # Abrindo site
     driver.get(link)
@@ -48,7 +54,7 @@ def start(lane, tier, region):
             )
         )
 
-        quit()
+        sys.exit(0)
 
     print("Site '{}' carregado\n".format(link))
 

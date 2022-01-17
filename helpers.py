@@ -1,3 +1,6 @@
+import sys
+
+
 regions = [
     "0 - Global",
     "1 - KR",
@@ -81,7 +84,7 @@ def getUserInput(minValue, maxValue):
 
 def validateAnswer(value, minValue, maxValue):
     if value.lower() == "q":
-        quit()
+        sys.exit(0)
 
     if not value.isdigit():
         return False

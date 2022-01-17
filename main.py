@@ -1,11 +1,27 @@
+import os
+import sys
 import scraper
 import spreadsheet
 import helpers
 
 from helpers import regions, tiers, lanes
 
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
+
+# Usando webdriver_manager para automaticamente instalar o driver do Edge
+try:
+    # Instalando web driver do Edge
+    bin = EdgeChromiumDriverManager().install()
+    # Verificando se o path existe
+    assert os.path.exists(bin)
+except:
+    print("Ocorreu um erro ao instalar o web driver do edge\n")
+    sys.exit(1)
+
 
 print(" - LoLalytics-scraper - \n")
+
 
 # Pedindo informações para o usuário, elas serão utilizados pelo scraper
 def main():
@@ -35,7 +51,7 @@ def main():
     # Começando o processo de salvar a tier list para um arquivo excel
     spreadsheet.start(result[0], result[1], lane[1], tier[1], region[1])
 
-    answer = input("Você quer rodar o script novamente (S/N): ")
+    answer = input("Você quer executar o programa novamente (s/n): ")
 
     # Verifica se a resposta está dentro do set de respostas possiveis
     if answer.lower() in {"s", "sim", "yes", "y"}:

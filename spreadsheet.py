@@ -5,7 +5,7 @@ import os
 def start(champions, patch, lane, tier, region):
     # Nome do arquivo e diretório para salvar ele
     filename = "{}_{}_{}.xlsx".format(region, tier, lane)
-    path = "data/{}/{}".format(lane, filename)
+    path = "data/{}/{}/{}".format(patch, lane, filename)
 
     # Caso o diretório não exista, ele será criado
     if not os.path.exists(os.path.dirname(path)):
