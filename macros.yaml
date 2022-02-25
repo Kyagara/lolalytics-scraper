@@ -1,0 +1,18 @@
+kr:
+    region: kr
+    tier: challenger
+    lane: main
+
+br:
+    region: br
+    tier: platinum_plus
+    lane: top
+
+nome_qualquer:
+    region: na
+    tier: diamond_plus
+    lane: mid
+
+['challenger', 'grandmaster', 'master_plus', 'master', 'd2_plus', 'diamond_plus', 'diamond', 'platinum_plus', '1trick', 'all']
+['Global', 'KR', 'BR', 'EUNE', 'EUW', 'JP', 'NA', 'OCE', 'LAN', 'LAS', 'TR', 'RU']
+['main', 'top', 'jungle', 'middle', 'bottom', 'support']

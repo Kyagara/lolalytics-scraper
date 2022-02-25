@@ -10,7 +10,7 @@ class Spreadsheet:
         self.region = region
         self.tier = tier
         self.lane = lane
-        self.patch = DataDragon().patch
+        self.patch = DataDragon().getCurrentPatch()
 
     def start(self):
         # Nome do arquivo e diretório para salvar ele

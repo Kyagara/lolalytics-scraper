@@ -74,7 +74,7 @@ class UserOptions:
             userInput = input("Por favor insira um valor válido.\n>> ")
             validAnswer = self.__isInputValid(userInput, maxValue)
 
-        if userInput == "":
+        if not userInput:
             value = dict[0]
         else:
             value = dict[int(userInput)]
@@ -83,9 +83,9 @@ class UserOptions:
 
     def __isInputValid(self, input: str, maxValue: int) -> bool:
         if input.lower() == "q":
-            sys.exit(0)
+            sys.exit()
 
-        if input == "":
+        if not input:
             return True
 
         if not input.isdigit():

@@ -23,6 +23,19 @@ Após baixar o projeto, abra um terminal no diretório do projeto e use o comand
 
 Ao terminar a instalação das dependências, basta usar o comando `python ./main.py` no terminal.
 
+## Macros
+
+Você pode acelerar a criação de spreadsheets adicionando macros no arquivo `macros.yaml`, eles precisam seguir o seguinte padrão:
+
+```yaml
+nome_do_macro:
+    region: br
+    tier: platinum_plus
+    lane: top
+```
+
+Valores que podem ser usados podem ser encontrados no arquivo `user_options.py`. Para usar um macro basta colocar o nome dele na execução do programa, como por exemplo: `python ./main.py nome_do_macro`.
+
 ## Colaboradores
 
 [Isac Martins](https://github.com/medalha01) - O amigo e também a pessoa que ajudou com a matemágica

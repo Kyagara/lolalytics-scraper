@@ -29,10 +29,10 @@ class TierList:
         return tierList
 
     def __fetchData(self) -> dict:
-        ddragon = DataDragon()
+        patch = DataDragon().getCurrentPatch()
 
         url = "https://axe.lolalytics.com/tierlist/1/?lane={}&patch={}&tier={}&queue=420&region={}".format(
-            self.lane, ddragon.patch, self.tier, self.region
+            self.lane, patch, self.tier, self.region
         )
 
         response = fetch(url).json()
@@ -67,12 +67,12 @@ class TierList:
             pickRate = toFloat(data[4] / totals[data[1]] * 200)
             banRate = toFloat(data[6])
             pbi = toFloat(avgWinDelta * (pickRate * 100 / (100 - banRate)))
-            games = data[4]
+            games = data[4] if data[4] else 0
 
             # Performance Worldwide
             rankWorldwide = data[7]
             winRateWorldwide = float(data[8])
-            gamesWorldwide = data[9]
+            gamesWorldwide = data[9] if data[9] else 0
             delta = toFloat(float(data[8]) - data[3] / data[4] * 100)
 
             eloValue = int(data[10] / 100)

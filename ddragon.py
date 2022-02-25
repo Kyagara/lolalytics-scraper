@@ -24,4 +24,7 @@ class DataDragon:
         return cls.instance
 
     def getChampionName(self, id: int) -> str:
-        return self.champions[id]
+        return self.instance.champions[id]
+
+    def getCurrentPatch(self) -> str:
+        return self.instance.patch
